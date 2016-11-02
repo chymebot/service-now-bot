@@ -5,24 +5,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 
-import com.chyme.servicenow.gen.be.BE_GetIncidents;
+import com.chyme.servicenow.gen.be.BE_GetIncidentsSample;
 import com.chyme.servicenow.gen.be.INCIDENT;
 import com.unvired.lib.utility.BusinessEntity;
 import com.unvired.lib.utility.Structure;
 
 public class BEUtility
 {
-	public static List<BE_GetIncidents> getBE_GetIncidents(List<BusinessEntity> beList)
+	public static List<BE_GetIncidentsSample> getBE_GetIncidentsSample(List<BusinessEntity> beList)
 	{
-		ArrayList<BE_GetIncidents> typedBEs = new ArrayList<BE_GetIncidents>();
+		ArrayList<BE_GetIncidentsSample> typedBEs = new ArrayList<BE_GetIncidentsSample>();
 
 		if(beList != null)
 		{
 			for (BusinessEntity be : beList)
 			{
-				if(be.getName().equals(BE_GetIncidents.NAME))
+				if(be.getName().equals(BE_GetIncidentsSample.NAME))
 				{
-					BE_GetIncidents typedBE = new BE_GetIncidents();
+					BE_GetIncidentsSample typedBE = new BE_GetIncidentsSample();
 					typedBEs.add(typedBE);
 					for (Entry<String, String> field : be.getHeader().getFieldsInOrder().entrySet())
 					{

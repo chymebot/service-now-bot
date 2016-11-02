@@ -3,7 +3,7 @@ package com.chyme.servicenow.gen.pa;
 
 public class Constant 
 {
-	public static final String PA_COMMAND_GETINCIDENTS = "SERVICENOW_PA_COMMAND_GETINCIDENTS";
-	public static final String SERVICENOW_REST_EXECUTE = "SERVICENOW_REST_EXECUTE";
+	public static final String PA_COMMAND_GETINCIDENTSSAMPLE = "SERVICENOW_SAMPLE_PA_COMMAND_GETINCIDENTSSAMPLE";
+	public static final String SERVICENOW_SAMPLE_REST_EXECUTE = "SERVICENOW_SAMPLE_REST_EXECUTE";
 
 }

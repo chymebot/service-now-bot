@@ -5,14 +5,14 @@ import java.net.URLEncoder;
 import java.util.Vector;
 
 import com.chyme.servicenow.gen.be.INCIDENT;
-import com.chyme.servicenow.gen.pa.ABSTRACT_COMMAND_GETINCIDENTS;
+import com.chyme.servicenow.gen.pa.ABSTRACT_COMMAND_GETINCIDENTSSAMPLE;
 import com.chyme.servicenow.utils.ServiceNowParser;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.unvired.chyme.api.Message;
 import com.unvired.ump.agent.IHTTPResponse;
 
-public class COMMAND_GETINCIDENTS extends ABSTRACT_COMMAND_GETINCIDENTS {
+public class COMMAND_GETINCIDENTSSAMPLE extends ABSTRACT_COMMAND_GETINCIDENTSSAMPLE {
 	
 	private String INSTANCE_WAKEUP_MSG = "Your instance is currently not active. Click More to proceed and wake up the instance.";
 
@@ -21,9 +21,9 @@ public class COMMAND_GETINCIDENTS extends ABSTRACT_COMMAND_GETINCIDENTS {
 
 		try {
 
-			String state = inputBE_GetIncidents.getGetIncidents_HEADER().getSTATE();
-			String priority = inputBE_GetIncidents.getGetIncidents_HEADER().getPRIORITY();
-			String shortDesc = inputBE_GetIncidents.getGetIncidents_HEADER().getSHORT_DESC();
+			String state = inputBE_GetIncidentsSample.getGetIncidentsSample_HEADER().getSTATE();
+			String priority = inputBE_GetIncidentsSample.getGetIncidentsSample_HEADER().getPRIORITY();
+			String shortDesc = inputBE_GetIncidentsSample.getGetIncidentsSample_HEADER().getSHORT_DESC();
 
 			String queryString = "sysparm_limit=10&sysparm_display_value=all&sysparm_query=";
 

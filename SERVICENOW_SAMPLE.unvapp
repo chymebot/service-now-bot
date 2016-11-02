@@ -2,7 +2,7 @@
   "Properties": {
     "LIBRARY": "true",
     "PACKAGE": "com.chyme.servicenow",
-    "DESCRIPTION": "ServiceNow",
+    "DESCRIPTION": "ServiceNow Sample",
     "LANGUAGE": "JAVA",
     "RELEASE_VERSION": "1.0",
     "ID": "63c91413-f6da-9582-yt8k-ff8b1ffca9db",
@@ -11,14 +11,14 @@
     "LIB_APP": "CHYME",
     "CHYME": "true",
     "VERSION": "1.0",
-    "NAME": "SERVICENOW"
+    "NAME": "SERVICENOW_SAMPLE"
   },
   "Systems": [
     {
       "Properties": {
         "PROTOCOL": "http",
         "SERVER": "192.168.98.202",
-        "APPLICATION": "SERVICENOW",
+        "APPLICATION": "SERVICENOW_SAMPLE",
         "USER": "chymeDeveloper",
         "SERVER_ID": "SVR558809492539",
         "DESCRIPTION": "UMP Server",
@@ -32,8 +32,8 @@
       "Metadata": {
         "BusinessEntity": [
           {
-            "NAME": "BE_GetIncidents",
-            "HEADER": "GetIncidents_HEADER",
+            "NAME": "BE_GetIncidentsSample",
+            "HEADER": "GetIncidentsSample_HEADER",
             "ATTACHMENT": "false",
             "SAVE": "true",
             "TYPE": "Generated"
@@ -50,21 +50,21 @@
       "Types": [
         {
           "Properties": {
-            "NAME": "BE_GetIncidents",
-            "DESCRIPTION": "Get Incidents"
+            "NAME": "BE_GetIncidentsSample",
+            "DESCRIPTION": "Get Incidents Sample"
           },
           "Element": [
             {
               "Properties": {
                 "DESCRIPTION": "",
                 "DECORATION": "",
-                "NAME": "BE_GetIncidents",
+                "NAME": "BE_GetIncidentsSample",
                 "TYPE": "Complex"
               },
               "Element": [
                 {
                   "Properties": {
-                    "NAME": "GetIncidents_HEADER",
+                    "NAME": "GetIncidentsSample_HEADER",
                     "TYPE": "Complex"
                   },
                   "Element": [
@@ -222,21 +222,21 @@
       "Functions": [
         {
           "Properties": {
-            "DESCRIPTION": "Get Incidents",
+            "DESCRIPTION": "Get Incidents Sample",
             "ACTION": "Get",
-            "NAME": "COMMAND_GETINCIDENTS",
+            "NAME": "COMMAND_GETINCIDENTSSAMPLE",
             "TYPE": "Action"
           },
           "Input": [
-            "BE_GetIncidents"
+            "BE_GetIncidentsSample"
           ],
           "Output": [
             "INCIDENT"
           ],
           "Interfaces": [
             {
-              "SYSTEM": "SERVICENOW",
-              "FUNCTION": "SERVICENOW_REST_EXECUTE"
+              "SYSTEM": "SERVICENOW_SAMPLE",
+              "FUNCTION": "SERVICENOW_SAMPLE_REST_EXECUTE"
             }
           ]
         }
@@ -260,16 +260,16 @@
     },
     {
       "Properties": {
-        "DESCRIPTION": "ServiceNow",
+        "DESCRIPTION": "ServiceNow Sample",
         "PROTOCOL": "https",
         "PORT": "443",
         "SERVER": "dev14877.service-now.com",
+        "NAME": "SERVICENOW_SAMPLE",
         "IMAGE": "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",
-        "NAME": "SERVICENOW",
         "AUTHENTICATION_TYPE": "Basic",
         "TYPE": "REST",
         "ALIAS": [
-          "servicenow"
+          "servicenowsample"
         ]
       },
       "Metadata": {
@@ -292,7 +292,7 @@
           "Properties": {
             "DESCRIPTION": "REST Call",
             "ACTION": "Custom",
-            "NAME": "SERVICENOW_REST_EXECUTE",
+            "NAME": "SERVICENOW_SAMPLE_REST_EXECUTE",
             "TYPE": "Application"
           },
           "Input": [],
@@ -312,11 +312,11 @@
   "Events": [],
   "Commands": [
     {
-      "CommandHandler": "COMMAND_GETINCIDENTS",
+      "CommandHandler": "COMMAND_GETINCIDENTSSAMPLE",
       "Properties": {
-        "DESCRIPTION": "Get Incidents",
+        "DESCRIPTION": "Get Incidents Sample",
         "COMMAND_HELP": "Get Incident ($SHORT_DESC$ $STATE$ $PRIORITY$ $OPENED_DATE$)",
-        "NAME": "GetIncidents"
+        "NAME": "GetIncidentsSample"
       },
       "Parameters": [
         {
@@ -413,28 +413,30 @@
         }
       ],
       "Attributes": [],
-      "Systems": []
+      "Systems": [
+        "SERVICENOW_SAMPLE"
+      ]
     }
   ],
   "Recipes": [
     {
       "Properties": {
-        "CHANGED_ON": "1475469703749",
-        "DESCRIPTION": "Get Incidents",
+        "CHANGED_ON": "1478088467739",
+        "DESCRIPTION": "Get Incidents Sample",
         "CREATED_ON": "1475410782432",
         "TYPE": "Command",
         "ID": "857fba8ae9864023a5bd329be87ff516",
         "TAGS": "Incidents, Get",
-        "CHECKSUM": "3423912778",
-        "NAME": "GetIncidents",
-        "IMAGE": "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"
+        "CHECKSUM": "3115843895",
+        "IMAGE": "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",
+        "NAME": "GetIncidentsSample"
       },
       "Attributes": [],
       "System": {
-        "NAME": "SERVICENOW",
-        "ALIAS": "servicenow"
+        "NAME": "SERVICENOW_SAMPLE",
+        "ALIAS": "servicenowsample"
       },
-      "Command": "GetIncidents",
+      "Command": "GetIncidentsSample",
       "Recipes": []
     }
   ]

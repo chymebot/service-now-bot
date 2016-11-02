@@ -71,7 +71,7 @@ public abstract class BotService implements IProcessAgent {
 		httpRequest.setParameters(postParameters);
 
 		IHTTPResponse httpResponse = (IHTTPResponse) process.getService().submitRequest(httpRequest,
-				Constant.SERVICENOW_REST_EXECUTE);
+				Constant.SERVICENOW_SAMPLE_REST_EXECUTE);
 		return httpResponse;
 	}
 
