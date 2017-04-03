@@ -1,10 +1,11 @@
-//	Generated using Unvired Modeller - Build R-4.000.0002
+//	Generated using Unvired Modeller - Build R-4.000.0042
 package com.chyme.servicenow.gen.utils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 
+import com.chyme.servicenow.gen.be.BE_AddNoteSample;
 import com.chyme.servicenow.gen.be.BE_GetIncidentsSample;
 import com.chyme.servicenow.gen.be.INCIDENT;
 import com.unvired.lib.utility.BusinessEntity;
@@ -12,6 +13,33 @@ import com.unvired.lib.utility.Structure;
 
 public class BEUtility
 {
+	public static List<BE_AddNoteSample> getBE_AddNoteSample(List<BusinessEntity> beList)
+	{
+		ArrayList<BE_AddNoteSample> typedBEs = new ArrayList<BE_AddNoteSample>();
+
+		if(beList != null)
+		{
+			for (BusinessEntity be : beList)
+			{
+				if(be.getName().equals(BE_AddNoteSample.NAME))
+				{
+					BE_AddNoteSample typedBE = new BE_AddNoteSample();
+					typedBEs.add(typedBE);
+					for (Entry<String, String> field : be.getHeader().getFieldsInOrder().entrySet())
+					{
+						typedBE.getHeader().addField(field.getKey(), field.getValue());
+					}
+
+					//	Process each item individually
+					for (Structure item : be.getItems())
+					{
+					}
+				}
+			}
+		}
+		return typedBEs;
+	}
+
 	public static List<BE_GetIncidentsSample> getBE_GetIncidentsSample(List<BusinessEntity> beList)
 	{
 		ArrayList<BE_GetIncidentsSample> typedBEs = new ArrayList<BE_GetIncidentsSample>();

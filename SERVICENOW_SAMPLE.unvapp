@@ -1,5 +1,6 @@
 {
   "Properties": {
+    "SOLUTION": "{\"solutionId\":\"58e213db01ec60102315ce77\",\"name\":\"servicenowsample\",\"description\":\"ServiceNow Sample\",\"defaultCSBot\":\"servicenowsample\"}",
     "LIBRARY": "true",
     "PACKAGE": "com.chyme.servicenow",
     "DESCRIPTION": "ServiceNow Sample",
@@ -16,21 +17,28 @@
   "Systems": [
     {
       "Properties": {
-        "PROTOCOL": "http",
-        "SERVER": "192.168.98.202",
+        "PROTOCOL": "https",
+        "SERVER": "pmsmbots.ru",
         "APPLICATION": "SERVICENOW_SAMPLE",
         "USER": "chymeDeveloper",
-        "SERVER_ID": "SVR558809492539",
+        "SERVER_ID": "SVR202910042014",
         "DESCRIPTION": "UMP Server",
-        "AUTH_TOKEN": "5zzx334srl2up6zf4app20k443tyir7h9bchyvrp",
-        "NAMESPACE": "UNVIRED",
+        "AUTH_TOKEN": "kvgd49geumq43fuo48tbzbqxocgbc27we9gngnvy",
+        "NAMESPACE": "PMI",
         "TYPE": "ME",
-        "SYNC_PORT": "8080",
+        "SYNC_PORT": "443",
         "PASSWORD": "",
         "NAME": "ME"
       },
       "Metadata": {
         "BusinessEntity": [
+          {
+            "NAME": "BE_AddNoteSample",
+            "HEADER": "AddNoteSample_HEADER",
+            "ATTACHMENT": "false",
+            "SAVE": "true",
+            "TYPE": "Generated"
+          },
           {
             "NAME": "BE_GetIncidentsSample",
             "HEADER": "GetIncidentsSample_HEADER",
@@ -48,6 +56,62 @@
         ]
       },
       "Types": [
+        {
+          "Properties": {
+            "NAME": "BE_AddNoteSample",
+            "DESCRIPTION": "Add Note Sample"
+          },
+          "Element": [
+            {
+              "Properties": {
+                "DESCRIPTION": "",
+                "DECORATION": "",
+                "NAME": "BE_AddNoteSample",
+                "TYPE": "Complex"
+              },
+              "Element": [
+                {
+                  "Properties": {
+                    "NAME": "AddNoteSample_HEADER",
+                    "TYPE": "Complex"
+                  },
+                  "Element": [
+                    {
+                      "Properties": {
+                        "FRACTION": "0",
+                        "MANDATORY": "true",
+                        "LENGTH": "0",
+                        "CLIENT_TYPE": "TEXT",
+                        "XSD_TYPE": "STRING",
+                        "KEY": "false",
+                        "DEFAULT": "",
+                        "DESCRIPTION": "Note",
+                        "NATIVE_TYPE": "STRING",
+                        "TYPE": "Simple",
+                        "NAME": "note"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "FRACTION": "0",
+                        "MANDATORY": "true",
+                        "LENGTH": "0",
+                        "CLIENT_TYPE": "TEXT",
+                        "XSD_TYPE": "STRING",
+                        "KEY": "false",
+                        "DEFAULT": "",
+                        "DESCRIPTION": "Incident Number",
+                        "NATIVE_TYPE": "STRING",
+                        "TYPE": "Simple",
+                        "NAME": "number"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "Properties": {
             "NAME": "BE_GetIncidentsSample",
@@ -71,7 +135,7 @@
                     {
                       "Properties": {
                         "FRACTION": "0",
-                        "MANDATORY": "false",
+                        "MANDATORY": "true",
                         "LENGTH": "0",
                         "CLIENT_TYPE": "TEXT",
                         "XSD_TYPE": "STRING",
@@ -80,7 +144,7 @@
                         "DESCRIPTION": "Short Description",
                         "NATIVE_TYPE": "STRING",
                         "TYPE": "Simple",
-                        "NAME": "SHORT_DESC"
+                        "NAME": "short_description"
                       }
                     },
                     {
@@ -88,14 +152,29 @@
                         "FRACTION": "0",
                         "MANDATORY": "false",
                         "LENGTH": "0",
-                        "CLIENT_TYPE": "TEXT",
+                        "CLIENT_TYPE": "INTEGER",
+                        "XSD_TYPE": "INT",
+                        "KEY": "false",
+                        "DEFAULT": "",
+                        "DESCRIPTION": "Impact",
+                        "NATIVE_TYPE": "STRING",
+                        "TYPE": "Simple",
+                        "NAME": "impact"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "FRACTION": "0",
+                        "MANDATORY": "false",
+                        "LENGTH": "0",
+                        "CLIENT_TYPE": "INTEGER",
                         "XSD_TYPE": "STRING",
                         "KEY": "false",
                         "DEFAULT": "",
                         "DESCRIPTION": "State",
                         "NATIVE_TYPE": "STRING",
                         "TYPE": "Simple",
-                        "NAME": "STATE"
+                        "NAME": "state"
                       }
                     },
                     {
@@ -107,10 +186,10 @@
                         "XSD_TYPE": "STRING",
                         "KEY": "false",
                         "DEFAULT": "",
-                        "DESCRIPTION": "Priority",
+                        "DESCRIPTION": "Incident Number",
                         "NATIVE_TYPE": "STRING",
                         "TYPE": "Simple",
-                        "NAME": "PRIORITY"
+                        "NAME": "number"
                       }
                     }
                   ]
@@ -145,7 +224,7 @@
                         "DESCRIPTION": "Short Description",
                         "CLIENT_TYPE": "TEXT",
                         "NATIVE_TYPE": "STRING",
-                        "NAME": "SHORT_DESC",
+                        "NAME": "short_description",
                         "XSD_TYPE": "STRING",
                         "TYPE": "Simple"
                       }
@@ -157,7 +236,7 @@
                         "CLIENT_TYPE": "TEXT",
                         "NATIVE_TYPE": "STRING",
                         "MANDATORY": "true",
-                        "NAME": "NUMBER",
+                        "NAME": "number",
                         "XSD_TYPE": "STRING",
                         "TYPE": "Simple"
                       }
@@ -167,7 +246,7 @@
                         "DESCRIPTION": "Category",
                         "CLIENT_TYPE": "TEXT",
                         "NATIVE_TYPE": "STRING",
-                        "NAME": "CATEGORY",
+                        "NAME": "category",
                         "XSD_TYPE": "STRING",
                         "TYPE": "Simple"
                       }
@@ -177,7 +256,7 @@
                         "DESCRIPTION": "Impact",
                         "CLIENT_TYPE": "TEXT",
                         "NATIVE_TYPE": "STRING",
-                        "NAME": "IMPACT",
+                        "NAME": "impact",
                         "XSD_TYPE": "STRING",
                         "TYPE": "Simple"
                       }
@@ -187,7 +266,7 @@
                         "DESCRIPTION": "Priority",
                         "CLIENT_TYPE": "TEXT",
                         "NATIVE_TYPE": "STRING",
-                        "NAME": "PRIORITY",
+                        "NAME": "priority",
                         "XSD_TYPE": "STRING",
                         "TYPE": "Simple"
                       }
@@ -197,17 +276,17 @@
                         "DESCRIPTION": "State",
                         "CLIENT_TYPE": "TEXT",
                         "NATIVE_TYPE": "STRING",
-                        "NAME": "STATE",
+                        "NAME": "state",
                         "XSD_TYPE": "STRING",
                         "TYPE": "Simple"
                       }
                     },
                     {
                       "Properties": {
-                        "DESCRIPTION": "Opened Date",
+                        "DESCRIPTION": "Opened",
                         "CLIENT_TYPE": "TEXT",
                         "NATIVE_TYPE": "STRING",
-                        "NAME": "OPENED_DATE",
+                        "NAME": "opened_at",
                         "XSD_TYPE": "STRING",
                         "TYPE": "Simple"
                       }
@@ -222,7 +301,31 @@
       "Functions": [
         {
           "Properties": {
-            "DESCRIPTION": "Get Incidents Sample",
+            "ID": "SERVICENOW_SAMPLE_PA_COMMAND_ADDNOTESAMPLE",
+            "REMOTE_ENABLE": "No",
+            "DESCRIPTION": "Add Note",
+            "ACTION": "Get",
+            "NAME": "COMMAND_ADDNOTESAMPLE",
+            "TYPE": "Action"
+          },
+          "Input": [
+            "BE_AddNoteSample"
+          ],
+          "Output": [
+            "INCIDENT"
+          ],
+          "Interfaces": [
+            {
+              "SYSTEM": "SERVICENOW_SAMPLE_SERVICE_NOW",
+              "FUNCTION": "SERVICENOW_EXECUTE"
+            }
+          ]
+        },
+        {
+          "Properties": {
+            "ID": "SERVICENOW_SAMPLE_PA_COMMAND_GETINCIDENTSSAMPLE",
+            "REMOTE_ENABLE": "No",
+            "DESCRIPTION": "Get Incidents",
             "ACTION": "Get",
             "NAME": "COMMAND_GETINCIDENTSSAMPLE",
             "TYPE": "Action"
@@ -235,8 +338,8 @@
           ],
           "Interfaces": [
             {
-              "SYSTEM": "SERVICENOW_SAMPLE",
-              "FUNCTION": "SERVICENOW_SAMPLE_REST_EXECUTE"
+              "SYSTEM": "SERVICENOW_SAMPLE_SERVICE_NOW",
+              "FUNCTION": "SERVICENOW_EXECUTE"
             }
           ]
         }
@@ -244,13 +347,13 @@
     },
     {
       "Properties": {
-        "PROTOCOL": "http",
-        "SERVER": "192.168.98.169",
-        "USER": "SOURABH",
+        "PROTOCOL": "https",
+        "SERVER": "pmsmbots.ru",
+        "USER": "srini",
         "DESCRIPTION": "Chyme Server",
         "TYPE": "CHYME",
-        "SYNC_PORT": "8080",
-        "NAMESPACE": "UNVIRED",
+        "SYNC_PORT": "443",
+        "NAMESPACE": "PMI",
         "PASSWORD": "",
         "NAME": "CHYME"
       },
@@ -260,53 +363,1911 @@
     },
     {
       "Properties": {
-        "DESCRIPTION": "ServiceNow Sample",
-        "PROTOCOL": "https",
-        "PORT": "443",
-        "SERVER": "dev14877.service-now.com",
-        "NAME": "SERVICENOW_SAMPLE",
+        "DESCRIPTION": "ServiceNow Sample Service Now",
+        "INSTANCE_URL": "https://dev14877.service-now.com",
+        "USER": "admin",
+        "VERSION": "v1",
         "IMAGE": "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",
-        "AUTHENTICATION_TYPE": "Basic",
-        "TYPE": "REST",
+        "NAME": "SERVICENOW_SAMPLE_SERVICE_NOW",
+        "TYPE": "SERVICE_NOW",
+        "PASSWORD": "",
         "ALIAS": [
           "servicenowsample"
         ]
       },
       "Metadata": {
-        "RESTServices": [
+        "VERSION": "",
+        "SNObjects": [
           {
-            "NAME": "GET_INCIDENTS",
-            "VERB": "GET",
-            "RESOURCE": "/api/now/table/incident?@queryString@",
-            "POST_QUERY": "false",
-            "VARIABLE": "true",
-            "BODY": "false",
-            "ATTACHMENT": "false",
-            "RESTParameter": []
+            "NAME": "incident",
+            "LABEL": "Incident",
+            "Fields": [
+              {
+                "NAME": "active",
+                "LABEL": "Active",
+                "TYPE": "boolean",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "activity_due",
+                "LABEL": "Activity due",
+                "TYPE": "due_date",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "approval",
+                "LABEL": "Approval",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "approval_history",
+                "LABEL": "Approval history",
+                "TYPE": "journal",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "approval_set",
+                "LABEL": "Approval set",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "assigned_to",
+                "LABEL": "Assigned to",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "assignment_group",
+                "LABEL": "Assignment group",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "business_duration",
+                "LABEL": "Business duration",
+                "TYPE": "glide_duration",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "business_stc",
+                "LABEL": "Business resolve time",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "calendar_duration",
+                "LABEL": "Duration",
+                "TYPE": "glide_duration",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "calendar_stc",
+                "LABEL": "Resolve time",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "caller_id",
+                "LABEL": "Caller",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "category",
+                "LABEL": "Category",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "caused_by",
+                "LABEL": "Caused by Change",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "child_incidents",
+                "LABEL": "Child Incidents",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "close_code",
+                "LABEL": "Close code",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "close_notes",
+                "LABEL": "Close notes",
+                "TYPE": "string",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "closed_at",
+                "LABEL": "Closed",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "closed_by",
+                "LABEL": "Closed by",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "cmdb_ci",
+                "LABEL": "Configuration item",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "comments",
+                "LABEL": "Additional comments",
+                "TYPE": "journal_input",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "comments_and_work_notes",
+                "LABEL": "Comments and Work notes",
+                "TYPE": "journal_list",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "company",
+                "LABEL": "Company",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "contact_type",
+                "LABEL": "Contact type",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "correlation_display",
+                "LABEL": "Correlation display",
+                "TYPE": "string",
+                "LENGTH": "100",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "correlation_id",
+                "LABEL": "Correlation ID",
+                "TYPE": "string",
+                "LENGTH": "100",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "delivery_plan",
+                "LABEL": "Delivery plan",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "delivery_task",
+                "LABEL": "Delivery task",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "description",
+                "LABEL": "Description",
+                "TYPE": "string",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "due_date",
+                "LABEL": "Due date",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "escalation",
+                "LABEL": "Escalation",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "expected_start",
+                "LABEL": "Expected start",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "follow_up",
+                "LABEL": "Follow up",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "group_list",
+                "LABEL": "Group list",
+                "TYPE": "glide_list",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "impact",
+                "LABEL": "Impact",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "incident_state",
+                "LABEL": "Incident state",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "knowledge",
+                "LABEL": "Knowledge",
+                "TYPE": "boolean",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "location",
+                "LABEL": "Location",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "made_sla",
+                "LABEL": "Made SLA",
+                "TYPE": "boolean",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "notify",
+                "LABEL": "Notify",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "number",
+                "LABEL": "Number",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "opened_at",
+                "LABEL": "Opened",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "opened_by",
+                "LABEL": "Opened by",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "order",
+                "LABEL": "Order",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "parent",
+                "LABEL": "Parent",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "parent_incident",
+                "LABEL": "Parent Incident",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "priority",
+                "LABEL": "Priority",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "problem_id",
+                "LABEL": "Problem",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "reassignment_count",
+                "LABEL": "Reassignment count",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "rejection_goto",
+                "LABEL": "Rejection goto",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "reopen_count",
+                "LABEL": "Reopen count",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "resolved_at",
+                "LABEL": "Resolved",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "resolved_by",
+                "LABEL": "Resolved by",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "rfc",
+                "LABEL": "Change Request",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "severity",
+                "LABEL": "Severity",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "short_description",
+                "LABEL": "Short description",
+                "TYPE": "string",
+                "LENGTH": "80",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sla_due",
+                "LABEL": "SLA due",
+                "TYPE": "due_date",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "state",
+                "LABEL": "State",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "subcategory",
+                "LABEL": "Subcategory",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_class_name",
+                "LABEL": "Task type",
+                "TYPE": "sys_class_name",
+                "LENGTH": "80",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_created_by",
+                "LABEL": "Created by",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_created_on",
+                "LABEL": "Created",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_domain",
+                "LABEL": "Domain",
+                "TYPE": "domain_id",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_domain_path",
+                "LABEL": "Domain Path",
+                "TYPE": "domain_path",
+                "LENGTH": "255",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_id",
+                "LABEL": "Sys ID",
+                "TYPE": "GUID",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "true",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_mod_count",
+                "LABEL": "Updates",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_updated_by",
+                "LABEL": "Updated by",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "sys_updated_on",
+                "LABEL": "Updated",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "time_worked",
+                "LABEL": "Time worked",
+                "TYPE": "timer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "upon_approval",
+                "LABEL": "Upon approval",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "upon_reject",
+                "LABEL": "Upon reject",
+                "TYPE": "string",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "urgency",
+                "LABEL": "Urgency",
+                "TYPE": "integer",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "user_input",
+                "LABEL": "User input",
+                "TYPE": "user_input",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "variables",
+                "LABEL": "Variables",
+                "TYPE": "variables",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "watch_list",
+                "LABEL": "Watch list",
+                "TYPE": "glide_list",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "wf_activity",
+                "LABEL": "Workflow activity",
+                "TYPE": "reference",
+                "LENGTH": "32",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "work_end",
+                "LABEL": "Work end",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "work_notes",
+                "LABEL": "Work notes",
+                "TYPE": "journal_input",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "work_notes_list",
+                "LABEL": "Work notes list",
+                "TYPE": "glide_list",
+                "LENGTH": "4000",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              },
+              {
+                "NAME": "work_start",
+                "LABEL": "Work start",
+                "TYPE": "glide_date_time",
+                "LENGTH": "40",
+                "UNIQUE": "false",
+                "KEY": "false",
+                "PickHelp": []
+              }
+            ]
           }
         ]
       },
-      "Types": [],
+      "Types": [
+        {
+          "Properties": {
+            "NAME": "Servicenow",
+            "DESCRIPTION": "Servicenow"
+          },
+          "Element": [
+            {
+              "Properties": {
+                "DESCRIPTION": "",
+                "DECORATION": "",
+                "NAME": "Servicenow",
+                "TYPE": "Complex"
+              },
+              "Element": [
+                {
+                  "Properties": {
+                    "NAME": "incident",
+                    "TYPE": "Complex"
+                  },
+                  "Element": [
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Active",
+                        "NATIVE_TYPE": "boolean",
+                        "LENGTH": "40",
+                        "NAME": "active",
+                        "XSD_TYPE": "BOOLEAN",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Activity due",
+                        "NATIVE_TYPE": "due_date",
+                        "LENGTH": "40",
+                        "NAME": "activity_due",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Approval",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "approval",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Approval history",
+                        "NATIVE_TYPE": "journal",
+                        "LENGTH": "4000",
+                        "NAME": "approval_history",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Approval set",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "approval_set",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Assigned to",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "assigned_to",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Assignment group",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "assignment_group",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Business duration",
+                        "NATIVE_TYPE": "glide_duration",
+                        "LENGTH": "40",
+                        "NAME": "business_duration",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Business resolve time",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "business_stc",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Duration",
+                        "NATIVE_TYPE": "glide_duration",
+                        "LENGTH": "40",
+                        "NAME": "calendar_duration",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Resolve time",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "calendar_stc",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Caller",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "caller_id",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Category",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "category",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Caused by Change",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "caused_by",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Child Incidents",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "child_incidents",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Close code",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "close_code",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Close notes",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "4000",
+                        "NAME": "close_notes",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Closed",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "closed_at",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Closed by",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "closed_by",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Configuration item",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "cmdb_ci",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Additional comments",
+                        "NATIVE_TYPE": "journal_input",
+                        "LENGTH": "4000",
+                        "NAME": "comments",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Comments and Work notes",
+                        "NATIVE_TYPE": "journal_list",
+                        "LENGTH": "4000",
+                        "NAME": "comments_and_work_notes",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Company",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "company",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Contact type",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "contact_type",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Correlation display",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "100",
+                        "NAME": "correlation_display",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Correlation ID",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "100",
+                        "NAME": "correlation_id",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Delivery plan",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "delivery_plan",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Delivery task",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "delivery_task",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Description",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "4000",
+                        "NAME": "description",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Due date",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "due_date",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Escalation",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "escalation",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Expected start",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "expected_start",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Follow up",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "follow_up",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Group list",
+                        "NATIVE_TYPE": "glide_list",
+                        "LENGTH": "4000",
+                        "NAME": "group_list",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Impact",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "impact",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Incident state",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "incident_state",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Knowledge",
+                        "NATIVE_TYPE": "boolean",
+                        "LENGTH": "40",
+                        "NAME": "knowledge",
+                        "XSD_TYPE": "BOOLEAN",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Location",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "location",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Made SLA",
+                        "NATIVE_TYPE": "boolean",
+                        "LENGTH": "40",
+                        "NAME": "made_sla",
+                        "XSD_TYPE": "BOOLEAN",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Notify",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "notify",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Number",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "number",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Opened",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "opened_at",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Opened by",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "opened_by",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Order",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "order",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Parent",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "parent",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Parent Incident",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "parent_incident",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Priority",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "priority",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Problem",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "problem_id",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Reassignment count",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "reassignment_count",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Rejection goto",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "rejection_goto",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Reopen count",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "reopen_count",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Resolved",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "resolved_at",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Resolved by",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "resolved_by",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Change Request",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "rfc",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Severity",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "severity",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Short description",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "80",
+                        "NAME": "short_description",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "SLA due",
+                        "NATIVE_TYPE": "due_date",
+                        "LENGTH": "40",
+                        "NAME": "sla_due",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "State",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "state",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Subcategory",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "subcategory",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Task type",
+                        "NATIVE_TYPE": "sys_class_name",
+                        "LENGTH": "80",
+                        "NAME": "sys_class_name",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Created by",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "sys_created_by",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Created",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "sys_created_on",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Domain",
+                        "NATIVE_TYPE": "domain_id",
+                        "LENGTH": "32",
+                        "NAME": "sys_domain",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Domain Path",
+                        "NATIVE_TYPE": "domain_path",
+                        "LENGTH": "255",
+                        "NAME": "sys_domain_path",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "MANDATORY": "true",
+                        "LENGTH": "32",
+                        "XSD_TYPE": "STRING",
+                        "KEY": "true",
+                        "DESCRIPTION": "Sys ID",
+                        "DEFAULT": "",
+                        "NATIVE_TYPE": "GUID",
+                        "TYPE": "Simple",
+                        "NAME": "sys_id"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Updates",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "sys_mod_count",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Updated by",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "sys_updated_by",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Updated",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "sys_updated_on",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Time worked",
+                        "NATIVE_TYPE": "timer",
+                        "LENGTH": "40",
+                        "NAME": "time_worked",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Upon approval",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "upon_approval",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Upon reject",
+                        "NATIVE_TYPE": "string",
+                        "LENGTH": "40",
+                        "NAME": "upon_reject",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Urgency",
+                        "NATIVE_TYPE": "integer",
+                        "LENGTH": "40",
+                        "NAME": "urgency",
+                        "XSD_TYPE": "INT",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "User input",
+                        "NATIVE_TYPE": "user_input",
+                        "LENGTH": "4000",
+                        "NAME": "user_input",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Variables",
+                        "NATIVE_TYPE": "variables",
+                        "LENGTH": "40",
+                        "NAME": "variables",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Watch list",
+                        "NATIVE_TYPE": "glide_list",
+                        "LENGTH": "4000",
+                        "NAME": "watch_list",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Workflow activity",
+                        "NATIVE_TYPE": "reference",
+                        "LENGTH": "32",
+                        "NAME": "wf_activity",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Work end",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "work_end",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Work notes",
+                        "NATIVE_TYPE": "journal_input",
+                        "LENGTH": "4000",
+                        "NAME": "work_notes",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Work notes list",
+                        "NATIVE_TYPE": "glide_list",
+                        "LENGTH": "4000",
+                        "NAME": "work_notes_list",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    },
+                    {
+                      "Properties": {
+                        "DEFAULT": "",
+                        "KEY": "false",
+                        "DESCRIPTION": "Work start",
+                        "NATIVE_TYPE": "glide_date_time",
+                        "LENGTH": "40",
+                        "NAME": "work_start",
+                        "XSD_TYPE": "STRING",
+                        "TYPE": "Simple"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "Functions": [
         {
           "Properties": {
-            "DESCRIPTION": "REST Call",
+            "DESCRIPTION": "Servicenow API",
             "ACTION": "Custom",
-            "NAME": "SERVICENOW_SAMPLE_REST_EXECUTE",
+            "NAME": "SERVICENOW_EXECUTE",
             "TYPE": "Application"
           },
-          "Input": [],
-          "Output": []
+          "Input": [
+            "Servicenow"
+          ],
+          "Output": [
+            "Servicenow"
+          ]
         }
       ]
     }
   ],
   "Devices": [],
-  "Mappings": [],
+  "Mappings": [
+    {
+      "Properties": {
+        "DIRECTION": "Input"
+      },
+      "Source": {
+        "SYSTEM": "ME",
+        "FUNCTION": "COMMAND_GETINCIDENTSSAMPLE",
+        "TYPE": "BE_GetIncidentsSample"
+      },
+      "Destination": {
+        "SYSTEM": "SERVICENOW_SAMPLE_SERVICE_NOW",
+        "FUNCTION": "SERVICENOW_EXECUTE",
+        "TYPE": "Servicenow"
+      },
+      "Relations": []
+    },
+    {
+      "Properties": {
+        "DIRECTION": "Output"
+      },
+      "Source": {
+        "SYSTEM": "ME",
+        "FUNCTION": "COMMAND_GETINCIDENTSSAMPLE",
+        "TYPE": "INCIDENT"
+      },
+      "Destination": {
+        "SYSTEM": "SERVICENOW_SAMPLE_SERVICE_NOW",
+        "FUNCTION": "SERVICENOW_EXECUTE",
+        "TYPE": "Servicenow"
+      },
+      "Relations": [
+        {
+          "TYPE": "Root",
+          "FROM": "INCIDENT",
+          "TO": "Servicenow"
+        },
+        {
+          "TYPE": "Header",
+          "FROM": "INCIDENT~~INCIDENT_HEADER",
+          "TO": "Servicenow~~incident"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "INCIDENT~~INCIDENT_HEADER~~short_description",
+          "TO": "Servicenow~~incident~~short_description"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "INCIDENT~~INCIDENT_HEADER~~number",
+          "TO": "Servicenow~~incident~~number"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "INCIDENT~~INCIDENT_HEADER~~category",
+          "TO": "Servicenow~~incident~~category"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "INCIDENT~~INCIDENT_HEADER~~opened_at",
+          "TO": "Servicenow~~incident~~opened_at"
+        }
+      ]
+    },
+    {
+      "Properties": {
+        "DIRECTION": "Input"
+      },
+      "Source": {
+        "SYSTEM": "ME",
+        "FUNCTION": "COMMAND_ADDNOTESAMPLE",
+        "TYPE": "BE_AddNoteSample"
+      },
+      "Destination": {
+        "SYSTEM": "SERVICENOW_SAMPLE_SERVICE_NOW",
+        "FUNCTION": "SERVICENOW_EXECUTE",
+        "TYPE": "Servicenow"
+      },
+      "Relations": [
+        {
+          "TYPE": "Root",
+          "FROM": "BE_AddNoteSample",
+          "TO": "Servicenow"
+        },
+        {
+          "TYPE": "Header",
+          "FROM": "BE_AddNoteSample~~AddNoteSample_HEADER",
+          "TO": "Servicenow~~incident"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "BE_AddNoteSample~~AddNoteSample_HEADER~~number",
+          "TO": "Servicenow~~incident~~number"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "BE_AddNoteSample~~AddNoteSample_HEADER~~note",
+          "TO": "Servicenow~~incident~~comments"
+        }
+      ]
+    },
+    {
+      "Properties": {
+        "DIRECTION": "Output"
+      },
+      "Source": {
+        "SYSTEM": "ME",
+        "FUNCTION": "COMMAND_ADDNOTESAMPLE",
+        "TYPE": "INCIDENT"
+      },
+      "Destination": {
+        "SYSTEM": "SERVICENOW_SAMPLE_SERVICE_NOW",
+        "FUNCTION": "SERVICENOW_EXECUTE",
+        "TYPE": "Servicenow"
+      },
+      "Relations": [
+        {
+          "TYPE": "Root",
+          "FROM": "INCIDENT",
+          "TO": "Servicenow"
+        },
+        {
+          "TYPE": "Header",
+          "FROM": "INCIDENT~~INCIDENT_HEADER",
+          "TO": "Servicenow~~incident"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "INCIDENT~~INCIDENT_HEADER~~short_description",
+          "TO": "Servicenow~~incident~~short_description"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "INCIDENT~~INCIDENT_HEADER~~number",
+          "TO": "Servicenow~~incident~~number"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "INCIDENT~~INCIDENT_HEADER~~category",
+          "TO": "Servicenow~~incident~~category"
+        },
+        {
+          "TYPE": "HeaderField",
+          "FROM": "INCIDENT~~INCIDENT_HEADER~~opened_at",
+          "TO": "Servicenow~~incident~~opened_at"
+        }
+      ]
+    }
+  ],
   "DebugSettings": {
-    "AUTH_TOKEN": "ic230pdc2yur1eii9cpv99g5n6o6v4borlk19gmv",
-    "MUSRID": "PRADEEP",
-    "FUSRID": "pradeepdroid"
+    "AUTH_TOKEN": "hejaijvb0rxsd1ixjeu88in8psbso1xea2vu1aa5",
+    "MUSRID": "SRINI",
+    "FUSRID": "SRINI_iPad",
+    "SERVER_ID": "SVR202910042014"
   },
   "Decorations": [],
   "Events": [],
@@ -314,17 +2275,22 @@
     {
       "CommandHandler": "COMMAND_GETINCIDENTSSAMPLE",
       "Properties": {
+        "NLP_ACTION": "get",
         "DESCRIPTION": "Get Incidents Sample",
-        "COMMAND_HELP": "Get Incident ($SHORT_DESC$ $STATE$ $PRIORITY$ $OPENED_DATE$)",
-        "NAME": "GetIncidentsSample"
+        "NLP_SUGGESTION_TEXT": "Get Incidents",
+        "NLP_ACTION_TYPE": "GET",
+        "NLP_TEXT": "Get Incidents",
+        "NAME": "GetIncidentsSample",
+        "NLP_OBJECT": "incident"
       },
       "Parameters": [
         {
           "Properties": {
             "SEQUENCE_NO": "1",
             "DESCRIPTION": "Short Description",
-            "MANDATORY": "false",
-            "NAME": "SHORT_DESC",
+            "MANDATORY": "true",
+            "NLP_TAG": "paramShortText",
+            "NAME": "short_description",
             "TYPE": "Text"
           },
           "Values": []
@@ -332,112 +2298,183 @@
         {
           "Properties": {
             "SEQUENCE_NO": "2",
-            "DESCRIPTION": "State",
+            "DESCRIPTION": "Impact",
             "MANDATORY": "false",
-            "NAME": "STATE",
-            "TYPE": "List"
+            "NLP_TAG": "paramImpact",
+            "NAME": "impact",
+            "TYPE": "NumericList"
           },
           "Values": [
             {
-              "NAME": "Default",
-              "DESCRIPTION": "Default",
+              "NAME": "1",
+              "DESCRIPTION": "1 - High",
               "SEQUENCE_NO": "1"
             },
             {
-              "NAME": "New",
-              "DESCRIPTION": "New",
+              "NAME": "2",
+              "DESCRIPTION": "2 - Medium",
               "SEQUENCE_NO": "2"
             },
             {
-              "NAME": "Active",
-              "DESCRIPTION": "Active",
+              "NAME": "3",
+              "DESCRIPTION": "3 - Low",
               "SEQUENCE_NO": "3"
-            },
-            {
-              "NAME": "Awaiting Problem",
-              "DESCRIPTION": "Awaiting Problem",
-              "SEQUENCE_NO": "4"
-            },
-            {
-              "NAME": "Awaiting Evidence",
-              "DESCRIPTION": "Awaiting Evidence",
-              "SEQUENCE_NO": "5"
-            },
-            {
-              "NAME": "Resolved",
-              "DESCRIPTION": "Resolved",
-              "SEQUENCE_NO": "6"
             }
           ]
         },
         {
           "Properties": {
             "SEQUENCE_NO": "3",
-            "DESCRIPTION": "Priority",
+            "DESCRIPTION": "State",
             "MANDATORY": "false",
-            "NAME": "PRIORITY",
-            "TYPE": "List"
+            "NLP_TAG": "paramState",
+            "NAME": "state",
+            "TYPE": "NumericList"
           },
           "Values": [
             {
-              "NAME": "Default",
-              "DESCRIPTION": "Default",
+              "NAME": "1",
+              "DESCRIPTION": "New",
               "SEQUENCE_NO": "1"
             },
             {
-              "NAME": "1",
-              "DESCRIPTION": "1 - Critical",
+              "NAME": "2",
+              "DESCRIPTION": "Active",
               "SEQUENCE_NO": "2"
             },
             {
-              "NAME": "2",
-              "DESCRIPTION": "2 - High",
+              "NAME": "3",
+              "DESCRIPTION": "Awaiting Problem",
               "SEQUENCE_NO": "3"
             },
             {
-              "NAME": "3",
-              "DESCRIPTION": "3 - Moderate",
+              "NAME": "4",
+              "DESCRIPTION": "Awaiting User Info",
               "SEQUENCE_NO": "4"
             },
             {
-              "NAME": "4",
-              "DESCRIPTION": "4 - Low",
+              "NAME": "5",
+              "DESCRIPTION": "Awaiting Evidence",
               "SEQUENCE_NO": "5"
             },
             {
-              "NAME": "5",
-              "DESCRIPTION": "5 - Planning",
+              "NAME": "6",
+              "DESCRIPTION": "Resolved",
               "SEQUENCE_NO": "6"
+            },
+            {
+              "NAME": "7",
+              "DESCRIPTION": "Closed",
+              "SEQUENCE_NO": "7"
             }
           ]
+        },
+        {
+          "Properties": {
+            "SEQUENCE_NO": "4",
+            "DESCRIPTION": "Incident Number",
+            "MANDATORY": "false",
+            "NLP_TAG": "paramNumber",
+            "NAME": "number",
+            "TYPE": "Text"
+          },
+          "Values": []
         }
       ],
-      "Attributes": [],
-      "Systems": [
-        "SERVICENOW_SAMPLE"
-      ]
+      "Systems": []
+    },
+    {
+      "CommandHandler": "COMMAND_ADDNOTESAMPLE",
+      "Properties": {
+        "NLP_ACTION": "add",
+        "DESCRIPTION": "Add Note Sample",
+        "NLP_SUGGESTION_TEXT": "Add Note",
+        "NLP_ACTION_TYPE": "ADD",
+        "NLP_TEXT": "Add Note to Incident $number$",
+        "NAME": "AddNoteSample",
+        "NLP_OBJECT": "incident"
+      },
+      "Parameters": [
+        {
+          "Properties": {
+            "SEQUENCE_NO": "1",
+            "DESCRIPTION": "Note",
+            "MANDATORY": "true",
+            "NLP_TAG": "paramNote",
+            "NAME": "note",
+            "TYPE": "LongText"
+          },
+          "Values": []
+        },
+        {
+          "Properties": {
+            "SEQUENCE_NO": "2",
+            "DESCRIPTION": "Incident Number",
+            "MANDATORY": "true",
+            "NLP_TAG": "paramNumber",
+            "NAME": "number",
+            "TYPE": "Text"
+          },
+          "Values": []
+        }
+      ],
+      "Systems": []
     }
   ],
   "Recipes": [
     {
       "Properties": {
-        "CHANGED_ON": "1478088467739",
-        "DESCRIPTION": "Get Incidents Sample",
-        "CREATED_ON": "1475410782432",
+        "CHANGED_ON": "1490965855080",
+        "DESCRIPTION": "Add Incident Note",
+        "CREATED_ON": "1490952922171",
         "TYPE": "Command",
-        "ID": "857fba8ae9864023a5bd329be87ff516",
-        "TAGS": "Incidents, Get",
-        "CHECKSUM": "3115843895",
+        "ID": "d206b8ec90c947cabfaab19ca09527fa",
+        "TAGS": "Note, Add",
+        "CHECKSUM": "2072453718",
+        "NAME": "AddNoteSample",
+        "IMAGE": "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"
+      },
+      "Attributes": [],
+      "System": {
+        "NAME": "SERVICENOW_SAMPLE_SERVICE_NOW",
+        "ALIAS": "servicenowsample"
+      },
+      "Command": "AddNoteSample",
+      "Followup": [
+        {
+          "SuggestionText": "Thanks",
+          "DetailedText": "Thanks"
+        }
+      ]
+    },
+    {
+      "Properties": {
+        "CHANGED_ON": "1491220388027",
+        "DESCRIPTION": "Get Incidents",
+        "CREATED_ON": "1490945981150",
+        "TYPE": "Command",
+        "ID": "1ba43e47b7274bb1b1fa6d60c63a217c",
+        "TAGS": "Incident, Get",
+        "CHECKSUM": "1990949609",
         "IMAGE": "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",
         "NAME": "GetIncidentsSample"
       },
       "Attributes": [],
       "System": {
-        "NAME": "SERVICENOW_SAMPLE",
+        "NAME": "SERVICENOW_SAMPLE_SERVICE_NOW",
         "ALIAS": "servicenowsample"
       },
       "Command": "GetIncidentsSample",
-      "Recipes": []
+      "Followup": [
+        {
+          "SuggestionText": "Thanks",
+          "DetailedText": "Thanks"
+        },
+        {
+          "Recipe": "AddNoteSample"
+        }
+      ]
     }
-  ]
+  ],
+  "Conversations": []
 }

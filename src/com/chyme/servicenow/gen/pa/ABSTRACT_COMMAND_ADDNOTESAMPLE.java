@@ -4,14 +4,26 @@ package com.chyme.servicenow.gen.pa;
 import com.chyme.servicenow.gen.utils.BEUtility;
 import com.unvired.ump.agent.IBusinessProcess;
 
-public abstract class ABSTRACT_COMMAND_GETINCIDENTSSAMPLE extends BotService {
-	protected com.chyme.servicenow.gen.be.BE_GetIncidentsSample inputBE_GetIncidentsSample;
+public abstract class ABSTRACT_COMMAND_ADDNOTESAMPLE extends BotService {
+	protected com.chyme.servicenow.gen.be.BE_AddNoteSample inputBE_AddNoteSample;
 
 	public void init(IBusinessProcess process) {
 		super.init(process);
 
-		inputBE_GetIncidentsSample = BEUtility.getBE_GetIncidentsSample(process.getBusinessEntityInput()).get(0);
+		inputBE_AddNoteSample = BEUtility.getBE_AddNoteSample(process.getBusinessEntityInput()).get(0);
 
+	}
+
+	public com.chyme.servicenow.gen.servicenow.snobject.INCIDENT mapPojoToServicenow(
+			com.chyme.servicenow.gen.be.BE_AddNoteSample pojo) {
+		com.chyme.servicenow.gen.servicenow.snobject.INCIDENT entity = new com.chyme.servicenow.gen.servicenow.snobject.INCIDENT();
+		com.chyme.servicenow.gen.be.BE_AddNoteSample.AddNoteSample_HEADER header = (com.chyme.servicenow.gen.be.BE_AddNoteSample.AddNoteSample_HEADER) pojo
+				.getHeader();
+
+		entity.setNUMBER(header.getnumber());
+		entity.setCOMMENTS(header.getnote());
+
+		return entity;
 	}
 
 	public com.chyme.servicenow.gen.be.INCIDENT mapServicenowToPojo(
